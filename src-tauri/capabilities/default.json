@@ -29,9 +29,28 @@
           "args": [
             "serve"
           ]
+        },
+        {
+          "name": "python",
+          "sidecar": true,
+          "args": [
+            "-m",
+            "crew_wrapper",
+            "3001"
+          ]
         }
       ]
     },
     "opener:default"
-  ]
+  ],
+  "shell": {
+    "scope": {
+      "sidecar": {
+        "python": {
+          "path": "python",
+          "sidecarFiles": ["python/crew_wrapper"]
+        }
+      }
+    }
+  }
 }

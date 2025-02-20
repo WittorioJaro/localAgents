@@ -1,0 +1,8 @@
+setup.py
+crew_wrapper/__init__.py
+crew_wrapper/__main__.py
+crew_wrapper.egg-info/PKG-INFO
+crew_wrapper.egg-info/SOURCES.txt
+crew_wrapper.egg-info/dependency_links.txt
+crew_wrapper.egg-info/requires.txt
+crew_wrapper.egg-info/top_level.txt

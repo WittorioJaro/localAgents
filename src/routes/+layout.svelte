@@ -2,6 +2,8 @@
   import { cn } from '$lib/utils';
   import '../app.css';
   import { goto } from '$app/navigation';
+  import { ollamaManager } from '$lib/stores/ollama-store.svelte';
+  import "../app.css";
   
   let { children } = $props();
   let currentPath = $state('/');
@@ -10,6 +12,11 @@
     currentPath = path;
     goto(path, { replaceState: true });
   }
+
+  // Start Ollama server when app launches
+  $effect(() => {
+    void ollamaManager.startServer();
+  });
 </script>
 
 <div class={cn('min-h-screen bg-background font-sans antialiased')}>
@@ -40,6 +47,15 @@
             )}
           >
             Models
+          </button>
+          <button 
+            onclick={() => navigate('/agents')}
+            class={cn(
+              "px-3 py-2 rounded-md hover:bg-muted transition-colors",
+              currentPath === '/agents' && "bg-muted"
+            )}
+          >
+            Agents
           </button>
         </div>
       </div>
